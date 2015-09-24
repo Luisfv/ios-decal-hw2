@@ -12,6 +12,38 @@ class KeyboardViewController: UIInputViewController {
 
     @IBOutlet var nextKeyboardButton: UIButton!
     
+    @IBAction func cool(sender: AnyObject) {
+        self.textDocumentProxy.insertText("ヾ(⌐■_■)ノ")
+    }
+    
+    @IBAction func ghost(sender: AnyObject) {
+        self.textDocumentProxy.insertText("<(o o)>")
+    }
+    
+    @IBAction func cry(sender: AnyObject) {
+        self.textDocumentProxy.insertText("(•̥̥̥̥̥̥̥ ﹏ •̥̥̥̥̥̥̥̥๑)")
+    }
+    
+    @IBAction func hug(sender: AnyObject) {
+        self.textDocumentProxy.insertText("(づ｡◕‿‿◕｡)づ")
+    }
+    
+    @IBAction func blank(sender: AnyObject) {
+        self.textDocumentProxy.insertText("(‘.’)")
+    }
+    
+    @IBAction func del(sender: AnyObject) {
+        self.textDocumentProxy.deleteBackward()
+    }
+
+    @IBAction func `return`(sender: AnyObject) {
+        self.textDocumentProxy.insertText("\n")
+    }
+    
+    
+    
+    
+    
     var keyboardView: UIView!
 
     override func updateViewConstraints() {
@@ -45,6 +77,7 @@ class KeyboardViewController: UIInputViewController {
         view.addSubview(keyboardView)
         view.backgroundColor = keyboardView.backgroundColor
         nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside) // advanceToNextInputMode is already defined in template
+        
     }
 
 
